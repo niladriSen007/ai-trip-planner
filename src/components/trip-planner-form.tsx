@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import axios from "axios"
+import { motion } from "framer-motion"
+import { Calendar, Globe2, MapPin, Plane } from "lucide-react"
 import React, { useState } from "react"
 import TripDisplay from "./TripDisplay"
-import { Globe2, Calendar, MapPin, Plane } from "lucide-react"
-import { motion } from "framer-motion"
 
 interface TripDetails {
   currentLocation: string

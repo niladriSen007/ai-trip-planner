@@ -1,9 +1,8 @@
+import { motion } from 'framer-motion'
+import { Bus, Calendar, Compass, Image as ImageIcon, Landmark, Sparkles } from 'lucide-react'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Card } from './ui/card'
-import { Compass, Calendar, Bus, Landmark, Sparkles, Image as ImageIcon } from 'lucide-react'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 interface TripDisplayProps {
   plan: string
@@ -75,7 +74,7 @@ const TripDisplay: React.FC<TripDisplayProps> = ({ plan }) => {
                 {children}
               </motion.li>
             ),
-            p: ({ children, node }) => {
+            p: ({ children }) => {
              /*  const hasImage = node?.children[0]?.type === 'image'
               if (hasImage) {
                 return <>{children}</>
