@@ -1,8 +1,7 @@
 'use client'
 import { motion } from "framer-motion"
-import Image from "next/image"
+import { ArrowRight, Globe2, Map, Plane } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { Globe2, Plane, Map, ArrowRight } from "lucide-react"
 
 export default function Home() {
   const router = useRouter()

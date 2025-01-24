@@ -113,7 +113,7 @@ export const TripPlannerForm: React.FC = () => {
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            Hold on tight! We're crafting your journey from{" "}
+            Hold on tight! We&apos;re crafting your journey from{" "}
             <span className="text-blue-400">{tripDetails.currentLocation}</span> to{" "}
             <span className="text-purple-400">{tripDetails.destination}</span>
           </motion.p>
