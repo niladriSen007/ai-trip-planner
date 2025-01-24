@@ -35,12 +35,16 @@ export async function POST(request: Request): Promise<Response> {
           3-4 key travel and transport recommendations.
 
           ## Must-See Attractions
-          • List top 5 attractions with estimated visit duration
-          • Brief description for each
+          ### [Attraction Name]
+         
+          • Brief description with estimated visit duration
+          (Repeat for each major attraction)
 
           ## Local Experiences
           • 3-4 unique local activities or experiences
-          • Best times to experience them`
+          • Best times to experience them
+          
+        `
         },
         {
           role: "user",

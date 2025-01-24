@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Card } from './ui/card'
-import { Compass, Calendar, Bus, Landmark, Sparkles } from 'lucide-react'
+import { Compass, Calendar, Bus, Landmark, Sparkles, Image as ImageIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 interface TripDisplayProps {
   plan: string
@@ -74,13 +75,52 @@ const TripDisplay: React.FC<TripDisplayProps> = ({ plan }) => {
                 {children}
               </motion.li>
             ),
-            p: ({ children }) => (
-              <motion.p 
+            p: ({ children, node }) => {
+             /*  const hasImage = node?.children[0]?.type === 'image'
+              if (hasImage) {
+                return <>{children}</>
+              } */
+              return (
+                <motion.p 
+                  variants={item}
+                  className="text-gray-300 mb-4 hover:text-white transition-colors duration-300"
+                >
+                  {children}
+                </motion.p>
+              )
+            },
+           /*  img: ({ src, alt }) => {
+              if (!src) return null
+              
+              return (
+                <motion.div
+                  variants={item}
+                  className="relative w-full h-64 my-6 rounded-xl overflow-hidden group"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+                  <Image
+                    src={src}
+                    alt={alt || 'Travel destination'}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  {alt && (
+                    <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                      <span className="text-white text-sm">{alt}</span>
+                    </div>
+                  )}
+                </motion.div>
+              )
+            }, */
+            h3: ({ children }) => (
+              <motion.div 
                 variants={item}
-                className="text-gray-300 mb-4 hover:text-white transition-colors duration-300"
+                className="flex items-center gap-2 mt-6 mb-3"
               >
-                {children}
-              </motion.p>
+                <ImageIcon className="w-5 h-5 text-blue-400" />
+                <h3 className="text-xl font-semibold text-white">{children}</h3>
+              </motion.div>
             ),
           }}
         >

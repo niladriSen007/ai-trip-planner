@@ -46,7 +46,6 @@ export const TripPlannerForm: React.FC = () => {
       4. Estimated time at each location
       5. Any special local experiences
       6. Any other recommendations or tips
-      7. Total estimated cost of the trip
       `
 
     try {
@@ -54,7 +53,7 @@ export const TripPlannerForm: React.FC = () => {
         prompt,
       })
 
-      setTripResponse(response?.data.slice(3, -1))
+      setTripResponse(response?.data.trim())
       setIsLoading(false)
     } catch (error) {
       console.error("Error:", error)
